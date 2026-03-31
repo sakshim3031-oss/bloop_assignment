@@ -1,5 +1,5 @@
 name: bloop_assignment
-description: Bloop Flutter Take-Home Assessment
+description: Bloop Home Assessment
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -13,7 +13,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   freezed_annotation: ^2.4.4
-  json_annotation: ^4.9.0          # ← yeh important hai
+  json_annotation: ^4.9.0
   path_provider: ^2.1.4
 
 dev_dependencies:
@@ -21,7 +21,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.4.13
   freezed: ^2.5.7
-  json_serializable: ^6.8.0        # ← 6.13.1 ki jagah yeh rakho
+  json_serializable: ^6.8.0
 
 flutter:
   uses-material-design: true

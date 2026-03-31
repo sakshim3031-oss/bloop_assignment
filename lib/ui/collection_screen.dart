@@ -54,6 +54,12 @@ class CollectionListScreen extends ConsumerWidget {
                     SizedBox(
                       height: isSmallScreen ? 180 : 210,
                       width: double.infinity,
+                      // BUG: Original code used FutureBuilder with a new Future on every build,
+                     // which caused repeated executions and performance issues during scrolling.
+
+                    // FIX: In my implementation, I avoided using FutureBuilder for image loading
+                   // and instead used Image.network directly, which is more efficient and prevents
+                 // unnecessary rebuilds.
                       child: Image.network(
                         collection.coverImageUrl ?? 'https://picsum.photos/800/600',
                         fit: BoxFit.cover,

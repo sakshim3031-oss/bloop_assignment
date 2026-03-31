@@ -1,17 +1,72 @@
-# bloop_application
+# Bloop Assignment 
 
-A new Flutter project.
+This project is developed as part of the assignment submission.  
+It demonstrates Flutter development skills including data modeling, caching, state management, and debugging.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Flutter & Dart Version
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter: 3.x
+- Dart: >=3.0.0 <4.0.0
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##  How to Run the Project
+
+1. Clone the repository:
+   git clone https://github.com/sakshim3031-oss/bloop_assignment.git
+   cd bloop_assignment
+
+2. Install dependencies:
+   flutter pub get
+
+3. Run the app:
+   flutter run
+
+---
+
+## Task 1 — Data Modeling & Caching
+
+- Created a `Collection` model for handling data
+- Implemented local caching using Hive
+- Used Riverpod (AsyncNotifier) for state management
+
+### Implemented Flow:
+- Load cached data first
+- Fetch fresh data in background
+- Pull-to-refresh support
+
+---
+
+## Task 2 — Debug & Fix
+
+- Fixed incorrect Hive directory usage
+- Added null safety in cache to prevent crashes
+- Avoided performance issues caused by repeated Future creation
+- Handled safe data modification approach for Firestore
+
+---
+
+## Technical Decisions
+
+- Used mock data instead of Firestore for simplicity
+- Followed clean architecture (models, provider, services, UI)
+- Focused on stability and performance
+
+---
+
+## Project Structure
+
+lib/
+├── models/
+├── provider/
+├── services/
+├── ui/
+└── main.dart
+
+---
+
+## Author
+
+Sakshi Mishra

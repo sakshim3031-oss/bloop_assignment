@@ -4,16 +4,20 @@ import '../models/collection.dart';
 
 class CollectionCacheService {
   late Box _box;
-
+  //BUG: Used getApplicationDocumentsDirectory() which is not ideal for app cache storage.
+  // It can cause platform-specific issues and is not recommended for app support data.
+  // FIX: Replaced with getApplicationSupportDirectory() which is designed for app data storage.
   Future<void> init() async {
     final dir = await getApplicationSupportDirectory();
     Hive.init(dir.path);
     _box = await Hive.openBox('collection_cache');
   }
 
-  /// Cache miss gracefully return null (no throw)
   Future<List<Collection>?> getCollections(String key) async {
     final data = _box.get(key);
+    // BUG: If cache data is null, calling fromJson(null) would cause a runtime crash.
+   // This happens when the requested lesson is not found in cache.
+  // FIX: Added null check to safely return null instead of crashing.
     if (data == null) return null;
 
     try {
